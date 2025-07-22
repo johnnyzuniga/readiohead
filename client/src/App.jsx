@@ -11,7 +11,7 @@ function App() {
   const fetchAPI = async() => {
     const response = await axios.get('http://localhost:8080/');
     console.log(response.data.message);
-    setArray(response.data.fruits);
+    setArray(response.data.songs);
   }
 
   useEffect(() => {
@@ -26,11 +26,11 @@ function App() {
       <h2 className='subtext entrance'>Your paragraphs to emotion</h2>
 
       {/* API data display */}
-      <h3 className='fruits-title'>Express Server Input</h3>
+      <h3 className='fruits-title'>In Queue</h3>
       <div className='fruits'>
-        {array.map((fruit, index) => (
-          <div key={index} className='fruit-item'>
-            {fruit}
+        {array.map((song, index) => (
+          <div key={index}>
+            {song}
           </div>
         ))}
       </div>

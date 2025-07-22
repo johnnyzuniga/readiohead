@@ -10,7 +10,7 @@ app.use(cors(corsOptions));
 
 // Define a route for GET requests to the root URL
 app.get('/', (req, res) => {
-  res.send({ fruits: ['apple', 'banana', 'orange'], message: 'Hello from the server!' });
+  res.send({ songs: ['In a Good Way', 'Creep', 'Karma Police'], message: 'Hello from the server!' });
 });
 
 // Start the server
