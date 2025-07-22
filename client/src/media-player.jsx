@@ -10,7 +10,6 @@ function MediaPlayer() {
 
   return (
     <div className='fadein-up'>
-      <h2>Media Player Component</h2>
       <div className="media-player">
         <div className="controls">
           <button className="play-button" onClick={handlePlayPause}>
