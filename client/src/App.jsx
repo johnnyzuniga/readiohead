@@ -26,15 +26,16 @@ function App() {
       <h2 className='subtext entrance'>Your paragraphs to emotion</h2>
 
       {/* API data display */}
-      <h3 className='fruits-title'>In Queue</h3>
-      <div className='fruits'>
-        {array.map((song, index) => (
-          <div key={index}>
-            {song}
+      <div className='fadein-up'>
+        <h3>In Queue</h3>
+          <div>
+          {array.map((song, index) => (
+            <div key={index}>
+              {song}
+            </div>
+            ))}
           </div>
-        ))}
       </div>
-
     </div>
   )
 }

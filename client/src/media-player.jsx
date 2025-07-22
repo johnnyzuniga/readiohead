@@ -9,7 +9,7 @@ function MediaPlayer() {
   };
 
   return (
-    <div>
+    <div className='fadein-up'>
       <h2>Media Player Component</h2>
       <div className="media-player">
         <div className="controls">
