@@ -18,7 +18,7 @@
 }
 
 .media-player .progress {
-  min-width: clamp(100px, 14.5vw, 300px); /* min, preferred, max */
+  min-width: clamp(100px, 14vw, 300px); /* min, preferred, max */
   flex-grow: 1;
   height: 5px;
   background: #444;
