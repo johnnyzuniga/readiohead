@@ -21,12 +21,12 @@ function App() {
 
   return (
     <div>
-      <img src={spotifyLogo} className='logo spotify entrance-logo' alt="Spotify Logo" />
-      <h1 className='title entrance'>Readiohead</h1>
-      <h2 className='subtext entrance'>Your paragraphs to emotion</h2>
+      <img src={spotifyLogo} className='logo spotify fadeDown' alt="Spotify Logo" />
+      <h1 className='title fadeUp'>Readiohead</h1>
+      <h2 className='subtext fadeUp'>Your paragraphs to emotion</h2>
 
       {/* API data display */}
-      <div className='fadein-up'>
+      <div className='fadeUp'>
         <h3>In Queue</h3>
           <div>
           {array.map((song, index) => (

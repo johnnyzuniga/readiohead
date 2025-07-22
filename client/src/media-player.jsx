@@ -9,7 +9,7 @@ function MediaPlayer() {
   };
 
   return (
-      <div className="media-player fadein-up">
+      <div className="media-player fadeUp">
         <div className="controls">
           <button className="play-button" onClick={handlePlayPause}>
             {isPlaying ? '⏸' : '▶'}
