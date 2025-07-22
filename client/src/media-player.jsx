@@ -9,8 +9,7 @@ function MediaPlayer() {
   };
 
   return (
-    <div className='fadein-up'>
-      <div className="media-player">
+      <div className="media-player fadein-up">
         <div className="controls">
           <button className="play-button" onClick={handlePlayPause}>
             {isPlaying ? '⏸' : '▶'}
@@ -19,7 +18,6 @@ function MediaPlayer() {
           <button className="play-button">🕪</button>
         </div>
       </div>
-    </div>
   );
 }
 
