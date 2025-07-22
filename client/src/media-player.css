@@ -1,0 +1,32 @@
+.media-player {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.media-player h2 {
+  margin: 0 0 10px 0;
+}
+
+.media-player .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.media-player .progress {
+  flex-grow: 1;
+  height: 5px;
+  background: #444;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.media-player .play-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}

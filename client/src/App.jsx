@@ -26,7 +26,7 @@ function App() {
       <h2 className='subtext entrance'>Your paragraphs to emotion</h2>
 
       {/* API data display */}
-      <h3 className='fruits-title'>Fruits from the server:</h3>
+      <h3 className='fruits-title'>Express Server Input</h3>
       <div className='fruits'>
         {array.map((fruit, index) => (
           <div key={index} className='fruit-item'>
