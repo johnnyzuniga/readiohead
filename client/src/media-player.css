@@ -29,4 +29,9 @@
   border: none;
   color: white;
   cursor: pointer;
+  padding: 8px 12px;
+  width: 50px;             /* 👈 Fixed width to prevent jumping */
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
 }
