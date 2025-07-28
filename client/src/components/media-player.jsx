@@ -19,7 +19,7 @@ function MediaPlayer({ queue, emotions }) {
   useEffect(() => {
   if (queue && queue.length > 0) {
     //CHANGE SONG HERE
-    const songUrl = queue[5].url;
+    const songUrl = queue[0].url;
     setAudioSource(songUrl);
     if (audioRef.current) {
       audioRef.current.src = songUrl;

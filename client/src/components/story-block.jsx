@@ -29,7 +29,7 @@ function StoryBlock({ string }) {
   };
 
   return (
-    <div className="story-block">
+    <div className="story-block fadeUp">
       <div className="story-controls">
         <select value={currentChapter} onChange={handleChapterChange}>
           {chapters.map((chapter) => (
