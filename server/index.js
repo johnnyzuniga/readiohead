@@ -1,9 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const axios = require('axios');
 const app = express();
 const SpotifyWebApi = require('spotify-web-api-node')
-const port = 8080;
 const cors = require('cors');
 const corsOptions = {
   origin: ['http://localhost:5173'], 
@@ -36,6 +34,6 @@ spotifyApi.clientCredentialsGrant()
 //SPOTIFY API -- END
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:8080`);
+app.listen(process.env.PORT, () => {
+  console.log(`App listening at http://localhost:${process.env.PORT}`);
 });

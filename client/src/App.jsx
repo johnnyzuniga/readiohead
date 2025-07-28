@@ -10,15 +10,14 @@ function App() {
   //API CALL BLOCK
   const fetchAPI = async() => {
     const response = await axios.get('http://localhost:8080/');
-    console.log(response.data.message);
-    setArray(response.data.songs);
+    setArray(response.data.songlist.map(song => song.name)); // Set the song names in the array
   }
 
   useEffect(() => {
     fetchAPI();
   }, []);
   //END API CALL BLOCK
-
+  
   return (
     <div>
       <img src={spotifyLogo} className='logo spotify fadeDown' alt="Spotify Logo" />
