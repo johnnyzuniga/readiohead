@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react'
 import spotifyLogo from './assets/spotify.png'
 import axios from 'axios' 
 import './App.css'
-
+import MediaPlayer from './media-player.jsx'
 function App() {
 
     const [array, setArray] = useState([]);
 
   //API CALL BLOCK
-  const fetchAPI = async() => {
+  const fetchAPI = async () => {
     const response = await axios.get('http://localhost:8080/');
-    setArray(response.data.songlist.map(song => song.name)); // Set the song names in the array
-  }
+    setArray(response.data.songlist); // don't map to song.name — keep full objects
+  };
 
   useEffect(() => {
     fetchAPI();
@@ -25,16 +25,17 @@ function App() {
       <h2 className='subtext fadeUp'>Your paragraphs to emotion</h2>
 
       {/* API data display */}
-      <div className='fadeUp'>
+      {/*START*/}<div className='fadeUp'> 
         <h3>In Queue</h3>
           <div>
           {array.map((song, index) => (
             <div key={index}>
-              {song}
+              {song.name}
             </div>
             ))}
           </div>
-      </div>
+      </div>{/*END*/}
+      <MediaPlayer queue={array}/>
     </div>
   )
 }

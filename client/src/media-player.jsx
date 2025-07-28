@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useRef, useState } from 'react';
 import './media-player.css';
 
-function MediaPlayer() {
+function MediaPlayer({ queue }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.3);
@@ -14,37 +14,22 @@ function MediaPlayer() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-
-  //API CALL BLOCK
-  const fetchAPI = async() => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      const response = await axios.get('http://localhost:8080/');
-      
-      if (response.data.songlist && response.data.songlist.length > 0) {
-        const songUrl = response.data.songlist[0].url;
-        setAudioSource(songUrl);
-        
-        if (audioRef.current) {
-          audioRef.current.src = songUrl;
-          audioRef.current.volume = 0.3; // Set initial volume
-          audioRef.current.load();
-        }
-      } else {
-        setError('No songs available');
-      }
-    } catch (err) {
-      console.error('Error fetching API:', err);
-      setError('Failed to load audio');
-    } finally {
-      setIsLoading(false);
-    }
-  }
+  const currentSong = queue?.find(song => song.url === audioSource);
 
   useEffect(() => {
-    fetchAPI();
-  }, []);
+  if (queue && queue.length > 0) {
+    const songUrl = queue[0].url;
+    setAudioSource(songUrl);
+    if (audioRef.current) {
+      audioRef.current.src = songUrl;
+      audioRef.current.load();
+      audioRef.current.volume = volume;
+    }
+  } else {
+    setError('No songs in queue');
+  }
+}, [queue]);
+
 
   // Handle audio events
   useEffect(() => {
@@ -199,6 +184,9 @@ function MediaPlayer() {
           )}
         </div>
       </div>
+      {currentSong && (
+        <div className="now-playing">Now Playing: {currentSong.name} by {currentSong.artist}</div>
+        )}
       {error && <div className="error-message">{error}</div>}
     </div>
   );

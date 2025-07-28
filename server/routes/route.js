@@ -5,8 +5,8 @@ const router = express.Router();
 
 
 const songlist = [
-  { name: "Creep", url: "https://ia803205.us.archive.org/1/items/radiohead-creep_202006/Radiohead%20-%20Creep.mp3" },
-  { name: "High and Dry", url: "https://ia802302.us.archive.org/21/items/radiohead-high-dry-live-package/01%20-%20High%20%26%20Dry.mp3" }
+  { name: "Creep", artist:'Radiohead' , url: "https://ia803205.us.archive.org/1/items/radiohead-creep_202006/Radiohead%20-%20Creep.mp3" },
+  { name: "High and Dry", artist:'Radiohead' , url: "https://ia802302.us.archive.org/21/items/radiohead-high-dry-live-package/01%20-%20High%20%26%20Dry.mp3" }
 ];
 
 router.get('/', (req, res) => {
