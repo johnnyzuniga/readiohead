@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useRef, useState } from 'react';
-import './media-player.css';
+import './media-player.css'; 
 
 function MediaPlayer({ queue }) {
   const audioRef = useRef(null);
@@ -18,6 +18,7 @@ function MediaPlayer({ queue }) {
 
   useEffect(() => {
   if (queue && queue.length > 0) {
+    //CHANGE SONG HERE
     const songUrl = queue[0].url;
     setAudioSource(songUrl);
     if (audioRef.current) {
@@ -172,20 +173,22 @@ function MediaPlayer({ queue }) {
         <div className="volume-control">
           <button className="play-button" onClick={toggleVolumeSlider}>🕪</button>
           {showVolumeSlider && (
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.01"
-              value={volume}
-              onChange={handleVolumeChange}
-              className="volume-slider"
-            />
+            <div className="volume-slider-container">
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                className={"volume-slider"}
+              />
+            </div>
           )}
         </div>
       </div>
       {currentSong && (
-        <div className="now-playing">Now Playing: {currentSong.name} by {currentSong.artist}</div>
+        <div className="now-playing">{currentSong.artist} - {currentSong.name}</div>
         )}
       {error && <div className="error-message">{error}</div>}
     </div>

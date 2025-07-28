@@ -2,15 +2,16 @@ import { useState, useEffect } from 'react'
 import spotifyLogo from './assets/spotify.png'
 import axios from 'axios' 
 import './App.css'
-import MediaPlayer from './media-player.jsx'
+import MediaPlayer from './components/media-player.jsx'
+
 function App() {
 
-    const [array, setArray] = useState([]);
+  const [array, setArray] = useState([]);
 
   //API CALL BLOCK
   const fetchAPI = async () => {
     const response = await axios.get('http://localhost:8080/');
-    setArray(response.data.songlist); // don't map to song.name — keep full objects
+    setArray(response.data.songlist);
   };
 
   useEffect(() => {
