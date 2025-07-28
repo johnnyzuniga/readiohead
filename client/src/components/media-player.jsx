@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
 import { useRef, useState } from 'react';
 import './media-player.css'; 
 
-function MediaPlayer({ queue }) {
+function MediaPlayer({ queue, emotions }) {
   const audioRef = useRef(null);
+  const [mood, setMood] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.3);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
@@ -19,7 +19,7 @@ function MediaPlayer({ queue }) {
   useEffect(() => {
   if (queue && queue.length > 0) {
     //CHANGE SONG HERE
-    const songUrl = queue[0].url;
+    const songUrl = queue[5].url;
     setAudioSource(songUrl);
     if (audioRef.current) {
       audioRef.current.src = songUrl;
@@ -142,7 +142,7 @@ function MediaPlayer({ queue }) {
   };
 
   return (
-    <div className="media-player fadeUp">
+    <div className="media-player fadeIn">
       <audio ref={audioRef} preload="auto" />
       <div className="controls">
         <button 
@@ -188,7 +188,7 @@ function MediaPlayer({ queue }) {
         </div>
       </div>
       {currentSong && (
-        <div className="now-playing">{currentSong.artist} - {currentSong.name}</div>
+        <><div className="now-playing">{currentSong.artist} - {currentSong.name}</div></>
         )}
       {error && <div className="error-message">{error}</div>}
     </div>

@@ -55,3 +55,13 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.media-player {
+  transition: all 0.3s ease;
+  position: fixed;
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 40px;
+}

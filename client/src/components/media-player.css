@@ -1,12 +1,21 @@
 .media-player {
-  transition: all 0.3s ease;
-  position: fixed;
+  position: fixed; /* This ensures it's not affected by surrounding layout */
+  bottom: 20px;
+  right: 20px; /* optional: pin to corner */
   background-color: #282c34;
   color: white;
   padding: 20px;
   border-radius: 5px;
-  margin-top: 40px;
+  z-index: 9999; /* ensures it sits above other content */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(83, 87, 95, 0.85); /* semi-transparent */
+  backdrop-filter: blur(4px);              /* smooth background blur */
+  width: 450px;           /* reduce width */
+  font-size: 0.9rem;      /* smaller text */
+  padding: 12px 16px;     /* less padding */
 }
+
 
 .media-player h2 {
   margin: 0 0 10px 0;
@@ -62,7 +71,7 @@
 
 .time-display {
   font-size: 12px;
-  color: #ccc; /* Lighter gray to match the theme */
+  color: #ccc; /* Lighter gray to match he theme */
   min-width: 35px;
   text-align: center;
 }
@@ -148,12 +157,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.media-player:hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .now-playing {
