@@ -1,0 +1,440 @@
+{
+  "Chapter-1": {
+    "Chunk-1": [
+      {
+        "label": "fear",
+        "score": 0.5708587765693665
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "joy",
+        "score": 0.920107364654541
+      }
+    ]
+  },
+  "Chapter-2": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.5567677617073059
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "surprise",
+        "score": 0.5020377039909363
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "surprise",
+        "score": 0.4317494332790375
+      }
+    ]
+  },
+  "Chapter-3": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.3490387797355652
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "surprise",
+        "score": 0.887935221195221
+      }
+    ]
+  },
+  "Chapter-4": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.7291315197944641
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "joy",
+        "score": 0.7423523664474487
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "sadness",
+        "score": 0.4345487058162689
+      }
+    ]
+  },
+  "Chapter-5": {
+    "Chunk-1": [
+      {
+        "label": "joy",
+        "score": 0.3770044445991516
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "fear",
+        "score": 0.9694719314575195
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "fear",
+        "score": 0.8930618166923523
+      }
+    ]
+  },
+  "Chapter-6": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.5701172947883606
+      }
+    ]
+  },
+  "Chapter-7": {
+    "Chunk-1": [
+      {
+        "label": "anger",
+        "score": 0.637041449546814
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "anger",
+        "score": 0.9382079243659973
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "sadness",
+        "score": 0.8476787209510803
+      }
+    ]
+  },
+  "Chapter-8": {
+    "Chunk-1": [
+      {
+        "label": "joy",
+        "score": 0.5241228938102722
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "fear",
+        "score": 0.9621680378913879
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "sadness",
+        "score": 0.8976640701293945
+      }
+    ]
+  },
+  "Chapter-9": {
+    "Chunk-1": [
+      {
+        "label": "sadness",
+        "score": 0.9705802798271179
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "fear",
+        "score": 0.8974255323410034
+      }
+    ]
+  },
+  "Chapter-10": {
+    "Chunk-1": [
+      {
+        "label": "fear",
+        "score": 0.3059948980808258
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "sadness",
+        "score": 0.9822590351104736
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "sadness",
+        "score": 0.8484776020050049
+      }
+    ],
+    "Chunk-4": [
+      {
+        "label": "fear",
+        "score": 0.6678934097290039
+      }
+    ]
+  },
+  "Chapter-11": {
+    "Chunk-1": [
+      {
+        "label": "joy",
+        "score": 0.40122145414352417
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "neutral",
+        "score": 0.8068373203277588
+      }
+    ]
+  },
+  "Chapter-12": {
+    "Chunk-1": [
+      {
+        "label": "sadness",
+        "score": 0.9446887969970703
+      }
+    ]
+  },
+  "Chapter-13": {
+    "Chunk-1": [
+      {
+        "label": "fear",
+        "score": 0.944097638130188
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "joy",
+        "score": 0.4062510132789612
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "surprise",
+        "score": 0.8337584733963013
+      }
+    ]
+  },
+  "Chapter-14": {
+    "Chunk-1": [
+      {
+        "label": "fear",
+        "score": 0.7301429510116577
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "surprise",
+        "score": 0.6125722527503967
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "anger",
+        "score": 0.5827412605285645
+      }
+    ]
+  },
+  "Chapter-15": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.6404570937156677
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "fear",
+        "score": 0.5332908034324646
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "sadness",
+        "score": 0.5179698467254639
+      }
+    ]
+  },
+  "Chapter-16": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.3584497272968292
+      }
+    ]
+  },
+  "Chapter-17": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.8871451020240784
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "sadness",
+        "score": 0.9519914388656616
+      }
+    ]
+  },
+  "Chapter-18": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.4184201955795288
+      }
+    ]
+  },
+  "Chapter-19": {
+    "Chunk-1": [
+      {
+        "label": "anger",
+        "score": 0.8109151124954224
+      }
+    ]
+  },
+  "Chapter-20": {
+    "Chunk-1": [
+      {
+        "label": "fear",
+        "score": 0.951742947101593
+      }
+    ]
+  },
+  "Chapter-21": {
+    "Chunk-1": [
+      {
+        "label": "joy",
+        "score": 0.6607500910758972
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "surprise",
+        "score": 0.9285317063331604
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "joy",
+        "score": 0.9725261330604553
+      }
+    ],
+    "Chunk-4": [
+      {
+        "label": "sadness",
+        "score": 0.5585862994194031
+      }
+    ],
+    "Chunk-5": [
+      {
+        "label": "neutral",
+        "score": 0.5426046848297119
+      }
+    ]
+  },
+  "Chapter-22": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.5046322345733643
+      }
+    ]
+  },
+  "Chapter-23": {
+    "Chunk-1": [
+      {
+        "label": "joy",
+        "score": 0.6138501167297363
+      }
+    ]
+  },
+  "Chapter-24": {
+    "Chunk-1": [
+      {
+        "label": "fear",
+        "score": 0.3529973328113556
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "fear",
+        "score": 0.7619895339012146
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "fear",
+        "score": 0.9806836247444153
+      }
+    ]
+  },
+  "Chapter-25": {
+    "Chunk-1": [
+      {
+        "label": "fear",
+        "score": 0.957912802696228
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "joy",
+        "score": 0.47460776567459106
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "fear",
+        "score": 0.9882745742797852
+      }
+    ]
+  },
+  "Chapter-26": {
+    "Chunk-1": [
+      {
+        "label": "surprise",
+        "score": 0.3840336799621582
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "sadness",
+        "score": 0.862334132194519
+      }
+    ],
+    "Chunk-3": [
+      {
+        "label": "joy",
+        "score": 0.5735390782356262
+      }
+    ],
+    "Chunk-4": [
+      {
+        "label": "surprise",
+        "score": 0.8082865476608276
+      }
+    ],
+    "Chunk-5": [
+      {
+        "label": "fear",
+        "score": 0.9628968238830566
+      }
+    ]
+  },
+  "Chapter-27": {
+    "Chunk-1": [
+      {
+        "label": "sadness",
+        "score": 0.9301794767379761
+      }
+    ],
+    "Chunk-2": [
+      {
+        "label": "surprise",
+        "score": 0.6219912767410278
+      }
+    ]
+  }
+}

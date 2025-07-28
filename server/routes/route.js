@@ -1,6 +1,7 @@
-const axios = require('axios');
+const path = require('path');
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const songlist = [
   { name: "Creep", artist:'Radiohead' , url: "https://ia803205.us.archive.org/1/items/radiohead-creep_202006/Radiohead%20-%20Creep.mp3" },
@@ -8,8 +9,28 @@ const songlist = [
 ];
 
 router.get('/', (req, res) => {
-  res.send({ songlist });
+  const emotionsPath = path.join(__dirname, '..', 'emotions', 'chunks_emotions_data.json');
+  const chunksPath = path.join(__dirname, '..', 'emotions', 'chapters_chunks.json');
+
+  try {
+    const emotionsData = JSON.parse(fs.readFileSync(emotionsPath, 'utf8'));
+    const chunksData = JSON.parse(fs.readFileSync(chunksPath, 'utf8'));
+
+    res.json({
+      songlist,             
+      emotions: emotionsData,
+      chunks: chunksData,
+    });
+
+    console.log('Successfully passed JSON Files');
+  } catch (err) {
+    console.error('Error loading JSON files:', err);
+    if (!res.headersSent) {
+      res.status(500).json({ error: 'Failed to load data' });
+    }
+  }
 });
+
 
 module.exports = router;
 
