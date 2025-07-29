@@ -14,6 +14,7 @@ function MediaPlayer({ queue, currentSongUrl }) {
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isRepeating, setIsRepeating] = useState(true);
+  const [isFadingOut, setIsFadingOut] = useState(false);
   const currentSong = queue?.find(song => song.url === currentSongUrl);
 
   useEffect(() => {
@@ -123,8 +124,17 @@ function MediaPlayer({ queue, currentSongUrl }) {
   };
 
   const toggleVolumeSlider = () => {
-    setShowVolumeSlider(!showVolumeSlider);
+    if (showVolumeSlider) {
+      setIsFadingOut(true);
+      setTimeout(() => {
+        setShowVolumeSlider(false);
+        setIsFadingOut(false);
+      }, 300); // matches the fadeOutDown duration
+    } else {
+      setShowVolumeSlider(true);
+    }
   };
+
 
   const handleProgressChange = (e) => {
     const newTime = parseFloat(e.target.value);
@@ -190,21 +200,24 @@ function MediaPlayer({ queue, currentSongUrl }) {
           <span className="time-display">{formatTime(duration)}</span>
         </div>
         <div className="volume-control">
-          <button className="play-button" onClick={toggleVolumeSlider}> <FaVolumeUp /> </button>
-          {showVolumeSlider && (
-            <div className="volume-slider-container">
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value={volume}
-                onChange={handleVolumeChange}
-                className="volume-slider"
-              />
-            </div>
-          )}
-        </div>
+  <button className="play-button" onClick={toggleVolumeSlider}>
+    <FaVolumeUp />
+  </button>
+  {(showVolumeSlider || isFadingOut) && (
+    <div className="volume-slider-container">
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value={volume}
+        onChange={handleVolumeChange}
+        className={`volume-slider ${isFadingOut ? 'fade-out' : 'fade-in'}`}
+      />
+    </div>
+  )}
+</div>
+
       </div>
       {currentSong && (
         <div className="now-playing">

@@ -2,14 +2,13 @@
   position: fixed; /* This ensures it's not affected by surrounding layout */
   bottom: 20px;
   right: 20px; /* optional: pin to corner */
-  background-color: #282c34;
   color: white;
   padding: 20px;
   border-radius: 5px;
   z-index: 9999; /* ensures it sits above other content */
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(83, 87, 95, 0.85); /* semi-transparent */
+  background-color: rgba(67, 69, 76, 0.85); /* semi-transparent */
   backdrop-filter: blur(4px);              /* smooth background blur */
   width: 450px;           /* reduce width */
   font-size: 0.9rem;      /* smaller text */
@@ -99,7 +98,6 @@
 }
 
 .volume-slider {
-  animation: fadeInUp 0.3s ease-in-out;
   position: absolute;
   bottom: 70px;
   left: calc(50% - 50px);
@@ -112,9 +110,14 @@
   cursor: pointer;
 }
 
-.volume-slider.displayed {
+.volume-slider.fade-in {
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+.volume-slider.fade-out {
   animation: fadeOutDown 0.3s ease-in-out;
 }
+
 
 .volume-slider::-webkit-slider-thumb {
   appearance: none;
