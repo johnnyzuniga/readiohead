@@ -1,1 +1,1 @@
-ReactJS + Express + Books
+ReactJS + Express + The Little Prince
