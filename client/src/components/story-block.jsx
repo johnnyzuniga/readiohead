@@ -125,6 +125,7 @@ function StoryBlock({ string, queue, emotions, onSongSelect }) {
           <select value={selectedSongUrl} onChange={handleSongSelect}>
             {queue?.map(song => (
               <option key={song.url} value={song.url}>
+                {/*Sentence Cased Emotion*/}
                 {song.emotion.charAt(0).toUpperCase() + song.emotion.slice(1).toLowerCase()} - {song.name}
               </option>
             ))}
@@ -132,6 +133,7 @@ function StoryBlock({ string, queue, emotions, onSongSelect }) {
         </div>
 
         {/* Debug info */}
+        {/*
         <div className="emotion-debug" style={{marginTop: '10px', fontSize: '0.8em', color: '#666'}}>
           <div>Story Emotion: <strong>{currentEmotion || 'None'}</strong></div>
           <div>Song Emotion: <strong>{songEmotion || 'None'}</strong></div>
@@ -140,6 +142,8 @@ function StoryBlock({ string, queue, emotions, onSongSelect }) {
           </strong></div>
           <div>Current Chunk: {currentChunkKey}</div>
         </div>
+        */}
+
       </div>
 
       <div className="story-textbox">
