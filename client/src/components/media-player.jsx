@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { MdRepeatOne, MdRepeat } from 'react-icons/md';
+import { FaPlay, FaPause, FaRedoAlt, FaVolumeUp } from 'react-icons/fa';
 import './media-player.css';
 
-function MediaPlayer({ queue, currentSongUrl}) {
+function MediaPlayer({ queue, currentSongUrl }) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.3);
@@ -11,6 +13,7 @@ function MediaPlayer({ queue, currentSongUrl}) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isRepeating, setIsRepeating] = useState(true);
   const currentSong = queue?.find(song => song.url === currentSongUrl);
 
   useEffect(() => {
@@ -52,7 +55,12 @@ function MediaPlayer({ queue, currentSongUrl}) {
     };
 
     const handleEnded = () => {
-      setIsPlaying(false);
+      if (isRepeating) {
+        audio.currentTime = 0;
+        audio.play();
+      } else {
+        setIsPlaying(false);
+      }
     };
 
     const handleTimeUpdate = () => {
@@ -78,7 +86,7 @@ function MediaPlayer({ queue, currentSongUrl}) {
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
     };
-  }, [currentSongUrl]);
+  }, [currentSongUrl, isRepeating, isDragging]);
 
   const handlePlayPause = async () => {
     if (!audioRef.current || !currentSongUrl) {
@@ -134,6 +142,10 @@ function MediaPlayer({ queue, currentSongUrl}) {
     setIsDragging(false);
   };
 
+  const toggleRepeat = () => {
+    setIsRepeating(!isRepeating);
+  };
+
   const formatTime = (time) => {
     if (isNaN(time)) return '0:00';
     const minutes = Math.floor(time / 60);
@@ -150,7 +162,14 @@ function MediaPlayer({ queue, currentSongUrl}) {
           onClick={handlePlayPause}
           disabled={isLoading || !currentSongUrl}
         >
-          {isLoading ? '⏳' : (isPlaying ? '⏸' : '▶')}
+          {isLoading ? '⏳' : (isPlaying ? <FaPause /> : <FaPlay />)}
+        </button>
+        <button
+          className="play-button"
+          onClick={toggleRepeat}
+          title="Repeat current song"
+        >
+          {isRepeating ? <MdRepeatOne /> : <MdRepeat />}
         </button>
         <div className="progress-container">
           <span className="time-display">{formatTime(currentTime)}</span>
@@ -171,7 +190,7 @@ function MediaPlayer({ queue, currentSongUrl}) {
           <span className="time-display">{formatTime(duration)}</span>
         </div>
         <div className="volume-control">
-          <button className="play-button" onClick={toggleVolumeSlider}>🕪</button>
+          <button className="play-button" onClick={toggleVolumeSlider}> <FaVolumeUp /> </button>
           {showVolumeSlider && (
             <div className="volume-slider-container">
               <input
