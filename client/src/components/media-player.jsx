@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import './media-player.css'; 
+import './media-player.css';
 
 function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
   const audioRef = useRef(null);
@@ -12,8 +12,6 @@ function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const currentSong = queue?.find(song => song.url === currentSongUrl);
-  const [shouldAutoplayOnChange, setShouldAutoplayOnChange] = useState(false);
-
 
   useEffect(() => {
     if (audioRef.current && currentSongUrl) {
@@ -21,9 +19,7 @@ function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
       audioRef.current.load();
       audioRef.current.volume = volume;
       setIsLoading(true);
-    }
 
-    if (shouldAutoplayOnChange) {
       const playAudio = async () => {
         try {
           await audioRef.current.play();
@@ -31,13 +27,12 @@ function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
         } catch (err) {
           console.error('Autoplay failed:', err);
           setError('Autoplay failed');
+          setIsPlaying(false);
         }
       };
-      playAudio();
-    } else {
-      setIsPlaying(false);
-    }
 
+      playAudio();
+    }
   }, [currentSongUrl]);
 
   useEffect(() => {
@@ -150,8 +145,8 @@ function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
     <div className="media-player fadeIn">
       <audio ref={audioRef} preload="auto" />
       <div className="controls">
-        <button 
-          className="play-button" 
+        <button
+          className="play-button"
           onClick={handlePlayPause}
           disabled={isLoading || !currentSongUrl}
         >
@@ -186,14 +181,16 @@ function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
                 step="0.01"
                 value={volume}
                 onChange={handleVolumeChange}
-                className={"volume-slider"}
+                className="volume-slider"
               />
             </div>
           )}
         </div>
       </div>
       {currentSong && (
-        <><div className="now-playing">{currentSong.artist} - {currentSong.name}</div></>
+        <div className="now-playing">
+          {currentSong.artist} - {currentSong.name}
+        </div>
       )}
       {error && <div className="error-message">{error}</div>}
     </div>
