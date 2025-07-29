@@ -12,7 +12,7 @@ function App() {
   const [currentSongUrl, setCurrentSongUrl] = useState(null);
 
   const fetchAPI = async () => {
-    const response = await axios.get('http://localhost:8080/');
+    const response = await axios.get('https://readiohead-backend.onrender.com');
     const { songlist, emotions, chunks } = response.data;
     setSongs(songlist);
     setEmotions(emotions);
