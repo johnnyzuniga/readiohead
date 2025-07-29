@@ -21,3 +21,7 @@ animation: fadein;
   font-family: 'Georgia', serif;
   transition: transform 0.2s ease;
 }
+
+.manual-music{
+  padding-right: 1rem;
+}

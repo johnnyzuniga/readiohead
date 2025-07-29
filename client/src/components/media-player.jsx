@@ -1,38 +1,27 @@
-import { useEffect } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './media-player.css'; 
 
-function MediaPlayer({ queue, emotions }) {
+function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
   const audioRef = useRef(null);
-  const [mood, setMood] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.3);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [audioSource, setAudioSource] = useState(null);
   const [error, setError] = useState(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  const currentSong = queue?.find(song => song.url === audioSource);
+  const currentSong = queue?.find(song => song.url === currentSongUrl);
 
   useEffect(() => {
-  if (queue && queue.length > 0) {
-    //CHANGE SONG HERE
-    const songUrl = queue[0].url;
-    setAudioSource(songUrl);
-    if (audioRef.current) {
-      audioRef.current.src = songUrl;
+    if (audioRef.current && currentSongUrl) {
+      audioRef.current.src = currentSongUrl;
       audioRef.current.load();
       audioRef.current.volume = volume;
+      setIsLoading(true);
     }
-  } else {
-    setError('No songs in queue');
-  }
-}, [queue]);
+  }, [currentSongUrl]);
 
-
-  // Handle audio events
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -76,11 +65,10 @@ function MediaPlayer({ queue, emotions }) {
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
     };
-  }, [audioSource]);
-  //END API CALL BLOCK
+  }, [currentSongUrl]);
 
   const handlePlayPause = async () => {
-    if (!audioRef.current || !audioSource) {
+    if (!audioRef.current || !currentSongUrl) {
       console.warn('Audio not ready');
       return;
     }
@@ -90,8 +78,7 @@ function MediaPlayer({ queue, emotions }) {
         audioRef.current.pause();
         setIsPlaying(false);
       } else {
-        // Check if audio is ready to play
-        if (audioRef.current.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+        if (audioRef.current.readyState >= 2) {
           await audioRef.current.play();
           setIsPlaying(true);
         } else {
@@ -148,7 +135,7 @@ function MediaPlayer({ queue, emotions }) {
         <button 
           className="play-button" 
           onClick={handlePlayPause}
-          disabled={isLoading || !audioSource}
+          disabled={isLoading || !currentSongUrl}
         >
           {isLoading ? '⏳' : (isPlaying ? '⏸' : '▶')}
         </button>
@@ -189,7 +176,7 @@ function MediaPlayer({ queue, emotions }) {
       </div>
       {currentSong && (
         <><div className="now-playing">{currentSong.artist} - {currentSong.name}</div></>
-        )}
+      )}
       {error && <div className="error-message">{error}</div>}
     </div>
   );
