@@ -165,3 +165,38 @@
 .now-playing {
   margin-top: 10px;
 }
+
+/* DARK MODE FIXES */
+@media (prefers-color-scheme: dark) {
+  .media-player {
+    background-color: rgba(67, 69, 76, 0.85) !important;
+    color: white !important;
+  }
+
+  .progress-bar {
+    background: #888 !important;
+  }
+
+  .progress-bar::-webkit-slider-thumb,
+  .progress-bar::-moz-range-thumb {
+    background: white !important;
+  }
+
+  .volume-slider {
+    background: #666 !important;
+  }
+
+  .volume-slider::-webkit-slider-thumb,
+  .volume-slider::-moz-range-thumb {
+    background: white !important;
+    border: 2px solid #222 !important;
+  }
+
+  .time-display {
+    color: #ddd !important;
+  }
+
+  .play-button {
+    color: white !important;
+  }
+}

@@ -14,7 +14,7 @@ app.use(cors(corsOptions));
 app.use('/', router);
 
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+  console.log(`App has started`);
 });
 
 //SPOTIFY API -- START
