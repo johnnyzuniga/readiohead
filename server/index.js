@@ -4,7 +4,7 @@ const app = express();
 const SpotifyWebApi = require('spotify-web-api-node')
 const cors = require('cors');
 const corsOptions = {
-  origin: ['https://readiohead.onrender.com/'], 
+  origin: ['https://readiohead.onrender.com','http://localhost:5173'], 
 };
 const router = require('./routes/route');
 port = 8080;
