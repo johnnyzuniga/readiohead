@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './media-player.css';
 
-function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
+function MediaPlayer({ queue, currentSongUrl}) {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.3);

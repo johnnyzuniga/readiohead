@@ -36,13 +36,13 @@ function App() {
       <h2 className='subtext fadeUp'>Your paragraphs to emotion</h2>
 
       <MediaPlayer 
-        queue={song} 
-        emotions={emotions} 
+        queue={song}
         currentSongUrl={currentSongUrl}
         onSongChange={setCurrentSongUrl}
       />
       <StoryBlock 
-        string={chunks} 
+        string={chunks}
+        emotions={emotions} 
         queue={song} 
         onSongSelect={setCurrentSongUrl}
       />

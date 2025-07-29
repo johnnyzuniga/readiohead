@@ -4,12 +4,12 @@ const router = express.Router();
 const fs = require('fs');
 
 const songlist = [
-  { name: "Gymnopédie No. 1", artist:'Erik Satie' , emotion: 'Neutral' ,url: "https://ia601307.us.archive.org/5/items/ErikSatieGymnopdieNo.1/Erik%20Satie%20-%20Gymnop%C3%A9die%20No.1.mp3" },
-  { name: "Main Theme", artist:'Animal Crossing: New Horizons' , emotion: 'Happy', url: "https://ia903408.us.archive.org/10/items/AnimalCrossingNewHorizonsOSTRip/001%20-%20New%20Horizons%20Main%20Theme.mp3" },
-  { name: "Lux Aeterna", artist:'Clint Mansell' , emotion: 'Angry' ,url: "https://ia800406.us.archive.org/11/items/LuxAeterna_928/LuxAeternaByClintMansell.mp3" },
-  { name: "Spiegel Im Spiegel", artist:"Arvo Part", emotion:'Sad',url:"https://ia801602.us.archive.org/5/items/arvopartspiegelimspegel/01SpiegelImSpiegel.mp3"},
-  { name: "Symphony No. 5", artist:"Ludwig Van Beethoven", emotion:'Fear',url:"https://dn721904.ca.archive.org/0/items/SymphonyNo.5/Ludwig_van_Beethoven_-_symphony_no._5_in_c_minor_op._67_-_i._allegro_con_brio.mp3"},
-  { name: "Toccata and Fugue in D Minor", artist:"Johann Sebastian Bach", emotion:'Surprise',url:"https://ia801609.us.archive.org/16/items/ToccataAndFugueInDMinor/12ToccataAndFugueInDMinor_vbr.mp3"}
+  { name: "Gymnopédie No. 1", artist:'Erik Satie' , emotion: 'neutral' ,url: "https://ia601307.us.archive.org/5/items/ErikSatieGymnopdieNo.1/Erik%20Satie%20-%20Gymnop%C3%A9die%20No.1.mp3" },
+  { name: "Main Theme", artist:'Animal Crossing: New Horizons' , emotion: 'joy', url: "https://ia903408.us.archive.org/10/items/AnimalCrossingNewHorizonsOSTRip/001%20-%20New%20Horizons%20Main%20Theme.mp3" },
+  { name: "Lux Aeterna", artist:'Clint Mansell' , emotion: 'anger' ,url: "https://ia800406.us.archive.org/11/items/LuxAeterna_928/LuxAeternaByClintMansell.mp3" },
+  { name: "Spiegel Im Spiegel", artist:"Arvo Part", emotion:'sadness',url:"https://ia801602.us.archive.org/5/items/arvopartspiegelimspegel/01SpiegelImSpiegel.mp3"},
+  { name: "Symphony No. 5", artist:"Ludwig Van Beethoven", emotion:'fear',url:"https://dn721904.ca.archive.org/0/items/SymphonyNo.5/Ludwig_van_Beethoven_-_symphony_no._5_in_c_minor_op._67_-_i._allegro_con_brio.mp3"},
+  { name: "Toccata and Fugue in D Minor", artist:"Johann Sebastian Bach", emotion:'surprise',url:"https://ia801609.us.archive.org/16/items/ToccataAndFugueInDMinor/12ToccataAndFugueInDMinor_vbr.mp3"}
 ];
 
 router.get('/', (req, res) => {
