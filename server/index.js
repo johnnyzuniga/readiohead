@@ -7,12 +7,18 @@ const corsOptions = {
   origin: ['http://localhost:5173'], 
 };
 const router = require('./routes/route');
+port = 8080;
 
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use('/', router);
 
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
+});
+
 //SPOTIFY API -- START
+/*
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET
@@ -28,12 +34,10 @@ spotifyApi.clientCredentialsGrant()
   .catch(error => {
     console.log("Something went wrong when retrieving an access token", error);
 });
+*/
 
 // After setting access token
 
 //SPOTIFY API -- END
 
 // Start the server
-app.listen(process.env.PORT, () => {
-  console.log(`App listening at http://localhost:${process.env.PORT}`);
-});
