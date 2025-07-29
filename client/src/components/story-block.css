@@ -1,14 +1,62 @@
 .story-block {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Keep elements stacked vertically */
+  justify-content: flex-start;
   align-items: center;
   padding: 40px;
   background-color: #f4f4f8;
   min-height: 75vh;
+  gap: 20px;
 }
 
+.story-controls {
+  display: flex;
+  padding-right: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.story-controls select {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-buttons button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #4a4a4a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.nav-buttons button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.manual-music select {
+  min-width: 200px;
+}
+
+/* Your story text box */
 .story-textbox {
-animation: fadein;
+  animation: fadein;
   background-color: #ffffff;
   color: #333333;
   padding: 30px;
@@ -20,8 +68,4 @@ animation: fadein;
   border-radius: 12px;
   font-family: 'Georgia', serif;
   transition: transform 0.2s ease;
-}
-
-.manual-music{
-  padding-right: 1rem;
 }

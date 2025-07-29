@@ -12,6 +12,8 @@ function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
   const [duration, setDuration] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const currentSong = queue?.find(song => song.url === currentSongUrl);
+  const [shouldAutoplayOnChange, setShouldAutoplayOnChange] = useState(false);
+
 
   useEffect(() => {
     if (audioRef.current && currentSongUrl) {
@@ -20,6 +22,22 @@ function MediaPlayer({ queue, emotions, currentSongUrl, onSongChange }) {
       audioRef.current.volume = volume;
       setIsLoading(true);
     }
+
+    if (shouldAutoplayOnChange) {
+      const playAudio = async () => {
+        try {
+          await audioRef.current.play();
+          setIsPlaying(true);
+        } catch (err) {
+          console.error('Autoplay failed:', err);
+          setError('Autoplay failed');
+        }
+      };
+      playAudio();
+    } else {
+      setIsPlaying(false);
+    }
+
   }, [currentSongUrl]);
 
   useEffect(() => {
