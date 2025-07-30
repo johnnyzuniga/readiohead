@@ -12,17 +12,31 @@ function App() {
   const [currentSongUrl, setCurrentSongUrl] = useState(null);
 
   const fetchAPI = async () => {
-    {/*Formerly https://localhost:8080 */}
-    const response = await axios.get('https://readiohead-backend.onrender.com/');
-    const { songlist, emotions, chunks } = response.data;
-    setSongs(songlist);
-    setEmotions(emotions);
-    setChunks(chunks);
+    try {
+      // Try deployed backend first
+      const response = await axios.get('https://readiohead-backend.onrender.com');
+      const { songlist, emotions, chunks } = response.data;
+      setSongs(songlist);
+      setEmotions(emotions);
+      setChunks(chunks);
+    } catch (error) {
+      console.warn('Failed to fetch from deployed backend, trying localhost...', error.message);
+      try {
+        const response = await axios.get('http://localhost:8080');
+        const { songlist, emotions, chunks } = response.data;
+        setSongs(songlist);
+        setEmotions(emotions);
+        setChunks(chunks);
+      } catch (err) {
+        console.error('Both backends failed:', err.message);
+      }
+    }
   };
 
   useEffect(() => {
     fetchAPI();
   }, []);
+
 
   useEffect(() => {
     if (song.length > 0 && !currentSongUrl) {
