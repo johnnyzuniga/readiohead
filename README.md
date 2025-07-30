@@ -6,11 +6,13 @@ An application for matching story emotions with music
 - Express
 - Python (Jupyter Notebook)
 
-### How to Run: Backend
+## Create 2 separate terminals for execution
+How to Run:
+### Terminal 1: Backend
 - In the terminal: type 'cd server'
 - Then type: 'npm run start'
   
-### How to Run: Frontend
+### Terminal 2: Frontend
 - In the terminal: type 'cd client
 - Then, type: 'npm run dev'
 
