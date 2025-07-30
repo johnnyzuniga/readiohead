@@ -1,5 +1,5 @@
 # ReadioHead
-An Application for Matching Story Emotions with Music
+An application for matching story emotions with music
 
 ### Stack:
 - ReactJS
