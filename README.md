@@ -1,5 +1,5 @@
 # ReadioHead
-# #An Application for Matching Story Emotions with Music
+## An Application for Matching Story Emotions with Music
 
 ## #How to Run: Backend
 - In the terminal: type 'cd server'
