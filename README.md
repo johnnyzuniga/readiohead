@@ -1,11 +1,11 @@
-#ReadioHead
-##An Application for Matching Story Emotions with Music
+# ReadioHead
+# #An Application for Matching Story Emotions with Music
 
-###How to Run: Backend
+## #How to Run: Backend
 - In the terminal: type 'cd server'
 - Then type: 'npm run start'
   
-###How to Run: Frontend
+## #How to Run: Frontend
 - In the terminal: type 'cd client
 - Then, type: 'npm run dev'
 
