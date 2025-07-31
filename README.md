@@ -13,6 +13,7 @@ How to Run:
 - Then type: 'npm run start'
   
 ### Terminal 2: Frontend
-- In the terminal: type 'cd client
-- Then, type: 'npm run dev'
+- In the terminal: type 'cd client'
+- Then: 'npm run install'
+- Lastly, type: 'npm run dev'
 
